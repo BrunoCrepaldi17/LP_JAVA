@@ -148,8 +148,11 @@ public class ex2 extends javax.swing.JFrame {
             } else if (op == "*") {
                 soma = n1 * n2;
             }
+            
             DecimalFormat df = new DecimalFormat("#,###.00");
-            jLabelResultado.setText(String.valueOf(soma));
+            
+            jLabelResultado.setText(String.valueOf(df.format(soma)));
+            
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "É permitido apenas numeros");
         }
