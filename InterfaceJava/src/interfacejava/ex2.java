@@ -59,10 +59,6 @@ public class ex2 extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldNumero1.setText("0");
-
-        jTextFieldNumero2.setText("0");
-
         jComboBoxOperacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "/", "-", "+" }));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -78,7 +74,7 @@ public class ex2 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
