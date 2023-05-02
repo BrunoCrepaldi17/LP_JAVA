@@ -4,6 +4,9 @@
  */
 package interfacejava;
 
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aluno
@@ -127,24 +130,29 @@ public class ex2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         Double n1 = Double.parseDouble(jTextFieldNumero1.getText().replaceAll(",", "."));
-        Double n2 = Double.parseDouble(jTextFieldNumero2.getText().replaceAll(",", "."));
-        String op = jComboBoxOperacao.getSelectedItem().toString();
-        
+        try {
+            Double n1 = Double.parseDouble(jTextFieldNumero1.getText().replaceAll(",", "."));
+            Double n2 = Double.parseDouble(jTextFieldNumero2.getText().replaceAll(",", "."));
+            String op = jComboBoxOperacao.getSelectedItem().toString();
 
-        double soma = 0;
-                if(op == "+"){
-                soma = n1+n2;
+            double soma = 0;
+            if (op == "+") {
+                soma = n1 + n2;
+            } else if (op == "-") {
+                soma = n1 - n2;
+            } else if (op == "/") {
+                soma = n1 / n2;
+                if (n2 == 0) {
+                    JOptionPane.showMessageDialog(null, "Não é permitido divisão por zero");
                 }
-                else if (op == "-"){
-                soma = n1-n2;
-                }
-                else if(op == "/"){
-                soma = n1/n2;
-                }else if (op == "*"){
-                soma = n1*n2;
-                }
-        jLabelResultado.setText(String.valueOf(soma));
+            } else if (op == "*") {
+                soma = n1 * n2;
+            }
+            DecimalFormat df = new DecimalFormat("#,###.00");
+            jLabelResultado.setText(String.valueOf(soma));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "É permitido apenas numeros");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
